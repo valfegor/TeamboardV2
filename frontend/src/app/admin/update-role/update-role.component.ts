@@ -9,13 +9,13 @@ export class UpdateRoleComponent implements OnInit {
   public roleData: any;
   public registerData: any;
   constructor(private _roleService: RoleService) {
-    this.roleData = {};
+    this.roleData = [];
     this.registerData = {};
   }
 
   ngOnInit(): void {
     this._roleService.listRole().subscribe((res) => {
-      this.roleData = res.user;
+      this.roleData = res.role;
       console.log(this.roleData);
     });
   }
