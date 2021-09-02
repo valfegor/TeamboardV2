@@ -1,27 +1,28 @@
 <div class="bgComponent">
-    <div class="form">
+    <div class="form" >
       <mat-card class="card">
-        <mat-card-title>Register user</mat-card-title>
+        <mat-card-title>UpdateRole</mat-card-title>
         <mat-card-content>
           <div class="container">
-            <mat-form-field >
-              <input
-                
-                matInput
-                placeholder="{{role.name}}"
-                required
-              />
-            </mat-form-field>
-  
             <mat-form-field>
               <mat-label>Escoge un rol</mat-label>
               <mat-select  >
                 <mat-option *ngFor="let role of roleData" value= {{role.name}}
               >{{
                   role.name
-                }}</mat-option>
+                }}
+                
+            </mat-option>
               </mat-select>
             </mat-form-field>
+            <p>
+                <mat-form-field appearance="fill">
+                  <mat-label>Fill form field</mat-label>
+                  <input matInput placeholder="{{this.roleDescription}}">
+                  <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+                  <mat-hint>Hint</mat-hint>
+                </mat-form-field>
+              </p>
           </div>
         </mat-card-content>
         <mat-card-actions>
