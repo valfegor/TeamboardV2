@@ -14,4 +14,9 @@ export class RoleService {
   listRole(){
     return this._http.get<any>(this.env + 'role/listRole');
   }
+
+  updateRole(role: any){
+    return this._http.put<any>(this.env + 'role/updateRole',role);
+  }
+
 }
