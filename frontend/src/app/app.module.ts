@@ -39,6 +39,9 @@ import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 
+import {MatDialogModule} from "@angular/material/dialog";
+import { ConfirmDialogComponent } from './confirm-dialog/confirm-dialog.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -54,6 +57,7 @@ import { MatSortModule } from '@angular/material/sort';
     RegisterRoleComponent,
     ListRoleComponent,
     UpdateRoleComponent,
+    ConfirmDialogComponent,
   ],
   imports: [
     BrowserModule,
@@ -74,6 +78,7 @@ import { MatSortModule } from '@angular/material/sort';
     MatTableModule,
     MatPaginatorModule,
     MatSortModule,
+    MatDialogModule
   ],
   providers: [
     UserService,
