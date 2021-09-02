@@ -59,7 +59,5 @@ export class UserService {
     return this._http.post<any>(this.env + 'user/registerAdmin', user);
   }
 
-  listRole(){
-    return this._http.get<any>(this.env + 'role/listRole');
-  }
+  
 }

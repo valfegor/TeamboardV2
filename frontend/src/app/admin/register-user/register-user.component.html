@@ -30,22 +30,23 @@
                 required
               />
             </mat-form-field>
-            <h4>Basic native select</h4>
-            <mat-form-field appearance="fill">
-              <mat-label>Cars</mat-label>
-              <select matNativeControl required>
-                <option *ngFor='let rol of role'value="rol.name">{{rol.name}}</option>
-                
-              </select>
+  
+            <mat-form-field>
+              <mat-label>Escoge un rol</mat-label>
+              <mat-select  [(ngModel)]="registerData.name_id">
+                <mat-option *ngFor="let role of roleData" value= {{role.name}}
+              >{{
+                  role.name
+                }}</mat-option>
+              </mat-select>
             </mat-form-field>
           </div>
         </mat-card-content>
         <mat-card-actions>
-          <button (click)="registerUser()" class="button" mat-raised-button>
+          <button (click)="registerAdmin()" class="button" mat-raised-button>
             Register
           </button>
         </mat-card-actions>
       </mat-card>
     </div>
   </div>
-  

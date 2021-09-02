@@ -114,13 +114,12 @@ const registerAdmin = async (req, res) => {
   )
     return res.status(400).send("Process failed: Incomplete data");
 
-  const validId = await mongoose.Types.ObjectId.isValid(req.body.roleId);
-  if (!validId) return res.status(400).send("Invalid role ID");
+ 
 
   const existingUser = await User.findOne({ email: req.body.email });
   if (existingUser)
     return res.status(400).send("The user is already registered");
-
+  console.log(req.body.name_id);
 const role = await Role.findOne({name:req.body.name_id})
   const hash = await bcrypt.hash(req.body.password, 10);
 
