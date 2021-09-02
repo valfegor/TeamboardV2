@@ -1,1 +1,51 @@
-<p>register-user works!</p>
+<div class="bgComponent">
+    <div class="form">
+      <mat-card class="card">
+        <mat-card-title>Register user</mat-card-title>
+        <mat-card-content>
+          <div class="container">
+            <mat-form-field>
+              <input
+                [(ngModel)]="registerData.name"
+                matInput
+                placeholder="Name and lastname"
+                required
+              />
+            </mat-form-field>
+            <mat-form-field>
+              <input
+                [(ngModel)]="registerData.email"
+                type="email"
+                matInput
+                placeholder="Email"
+                required
+              />
+            </mat-form-field>
+            <mat-form-field>
+              <input
+                [(ngModel)]="registerData.password"
+                type="password"
+                matInput
+                placeholder="Password"
+                required
+              />
+            </mat-form-field>
+            <h4>Basic native select</h4>
+            <mat-form-field appearance="fill">
+              <mat-label>Cars</mat-label>
+              <select matNativeControl required>
+                <option *ngFor='let rol of role'value="rol.name">{{rol.name}}</option>
+                
+              </select>
+            </mat-form-field>
+          </div>
+        </mat-card-content>
+        <mat-card-actions>
+          <button (click)="registerUser()" class="button" mat-raised-button>
+            Register
+          </button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  </div>
+  

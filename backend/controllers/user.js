@@ -110,7 +110,7 @@ const registerAdmin = async (req, res) => {
     !req.body.name ||
     !req.body.email ||
     !req.body.password ||
-    !req.body.roleId
+    !req.body.name_id
   )
     return res.status(400).send("Process failed: Incomplete data");
 
@@ -121,13 +121,14 @@ const registerAdmin = async (req, res) => {
   if (existingUser)
     return res.status(400).send("The user is already registered");
 
+const role = await Role.findOne({name:req.body.name_id})
   const hash = await bcrypt.hash(req.body.password, 10);
 
   const user = new User({
     name: req.body.name,
     email: req.body.email,
     password: hash,
-    roleId: req.body.roleId,
+    roleId: role._id,
     dbStatus: true,
   });
 
